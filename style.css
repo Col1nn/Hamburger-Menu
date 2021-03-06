@@ -1,0 +1,44 @@
+.burger {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 50px;
+    height: 35px;
+    cursor: pointer;
+    /* background-color: gray; */
+}
+
+span {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background-color: black;
+    transition: top 0.1s linear, bottom 0.1s linear;
+}
+
+.burger>span:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.burger>span:nth-child(2) {
+    top: calc(50% - 3px);
+}
+
+.burger>span:nth-child(3) {
+    bottom: 0;
+}
+
+.burger.active span:nth-child(1) {
+    top: calc(50% - 3px);
+    transform: rotate(-30deg) translate(4px, -8px);
+    width: 70%;
+    transition: top 0.1s linear, transform 0.1s 0.2s linear, width 0.1s 0.2s linear;
+}
+
+.burger.active span:nth-child(3) {
+    bottom: calc(50% - 3px);
+    transform: rotate(30deg) translate(4px, 8px);
+    width: 70%;
+    transition: bottom 0.1s linear, transform 0.1s 0.2s linear, width 0.1s 0.2s linear;
+}
